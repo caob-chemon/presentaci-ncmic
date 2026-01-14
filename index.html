@@ -59,24 +59,22 @@
             z-index: -1;
         }
 
-        /* --- GRID DE DOLORES (CORREGIDO ALTO CONTRASTE) --- */
+        /* --- GRID DE DOLORES --- */
         .pain-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr);
             gap: 20px; margin-top: 20px; flex-grow: 1;
         }
         .pain-card {
-            background: var(--white); /* Fondo blanco para contraste */
+            background: var(--white);
             border-radius: 15px; padding: 25px;
-            border-left: 6px solid var(--pink); /* Borde más grueso */
+            border-left: 6px solid var(--pink);
             transition: 0.3s;
             display: flex; flex-direction: column; justify-content: flex-start;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra para separar del fondo */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             border: 1px solid #eee;
         }
-        .pain-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
         .pain-card i { font-size: 28px; color: var(--pink); margin-bottom: 15px; }
         .pain-card h4 { font-family: 'Montserrat'; font-size: 20px; color: var(--navy); margin-bottom: 8px; font-weight: 800; }
-        /* Texto negro y más grande para proyección */
         .pain-card p { font-size: 16px; color: #000; line-height: 1.4; font-weight: 500; }
 
         /* --- UTOPIA CARDS --- */
@@ -127,31 +125,40 @@
         .feature-list li { margin-bottom: 20px; font-size: 20px; display: flex; align-items: center; gap: 15px; color: #444; }
         .check-icon { color: var(--cyan); font-size: 24px; }
 
-        /* --- ODOO MODULES GRID (CORREGIDO ALTO CONTRASTE) --- */
+        /* --- ODOO MODULES GRID --- */
         .modules-scroll {
             display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-top: 30px;
-            opacity: 1; /* Eliminada la opacidad general */
+            opacity: 1;
         }
         .module-item {
-            background: #f8f9fa; /* Fondo gris muy claro */
-            border: 2px solid #ddd; /* Borde más visible */
-            padding: 10px; border-radius: 8px;
-            text-align: center; font-size: 13px; font-weight: 700; 
-            color: #333; /* Texto casi negro */
+            background: #f8f9fa; border: 2px solid #ddd; padding: 10px; border-radius: 8px;
+            text-align: center; font-size: 13px; font-weight: 700; color: #333;
             display: flex; align-items: center; justify-content: center; gap: 5px;
-            opacity: 0.9; /* Casi sólida para que se vea bien */
+            opacity: 0.9;
         }
         .module-item i { color: var(--pink); }
-        
         .highlight-box-modules {
             grid-column: 2 / span 3; grid-row: 2 / span 2;
-            background: var(--navy); 
-            color: white; border-radius: 15px;
+            background: var(--navy); color: white; border-radius: 15px;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            z-index: 10; box-shadow: 0 30px 60px rgba(0,0,0,0.5); /* Sombra fuerte */
+            z-index: 10; box-shadow: 0 30px 60px rgba(0,0,0,0.5);
             border: 4px solid var(--cyan);
-            opacity: 1 !important; /* Asegurar visibilidad total */
+            opacity: 1 !important;
         }
+
+        /* --- PARTNER VS DIRECT CARDS (NUEVO) --- */
+        .vs-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 30px; }
+        .vs-card { 
+            background: white; border-radius: 20px; padding: 30px 15px; text-align: center;
+            border: 1px solid #eee; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .vs-card:hover { transform: translateY(-10px); }
+        .vs-card.special { border: 2px solid var(--cyan); }
+        .vs-card i { font-size: 40px; color: var(--navy); margin-bottom: 20px; }
+        .vs-card h4 { font-family: 'Montserrat'; font-weight: 800; font-size: 16px; margin-bottom: 10px; color: var(--navy); }
+        .vs-card p { font-size: 14px; color: #000; font-weight: 500; line-height: 1.3; }
+        .vs-tag { position: absolute; top: 10px; right: 10px; background: var(--cyan); color: white; font-size: 9px; padding: 3px 8px; border-radius: 10px; font-weight: 900; }
 
         /* --- ANIMACIONES --- */
         .key-enter { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
@@ -309,7 +316,7 @@
             <div class="logo-fixed">chemon<span>.</span></div>
         </div>
 
-        <!-- 6. NUEVO SLIDE: LA SOLUCIÓN UTÓPICA -->
+        <!-- 6. LA SOLUCIÓN UTÓPICA -->
         <div class="slide" id="slide-6">
             <h2 class="navy-text" style="text-align: center; margin-bottom: 10px;">IMAGINEMOS UN <span class="cyan-text">ESCENARIO IDEAL</span></h2>
             <p style="text-align: center; font-size: 22px; color: #666; max-width: 800px; margin: 0 auto 40px;">¿Qué pasaría si existiera una herramienta que resolviera todo esto sin fricción?</p>
@@ -502,16 +509,47 @@
             <div class="logo-fixed">chemon<span>.</span></div>
         </div>
 
-        <!-- 14. DEMO -->
-        <div class="slide" id="slide-14" style="background: var(--navy); color: white; justify-content: center; align-items: center; text-align: center;">
+        <!-- 14. ¿POR QUÉ CHEMON? (NUEVA) -->
+        <div class="slide" id="slide-14">
+            <h2 class="navy-text" style="text-align: center;">¿ODOO DIRECTO O <span class="cyan-text">PARTNER CHEMON?</span></h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 20px;">Odoo es el motor, Chemon es el piloto experto para la industria de la construcción.</p>
+            
+            <div class="vs-container">
+                <div class="vs-card key-enter delay-1 special">
+                    <div class="vs-tag">NICHO ÚNICO</div>
+                    <i class="fa-solid fa-helmet-safety" style="color: var(--cyan);"></i>
+                    <h4>ESPECIALIZACIÓN</h4>
+                    <p>Hablamos tu idioma: Obra, Destajos, Almacén y Estimaciones. No somos generalistas.</p>
+                </div>
+                <div class="vs-card key-enter delay-2">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <h4>LOCALIZACIÓN</h4>
+                    <p>Contabilidad mexicana al 100%. CFDI 4.0, nóminas y complementos del SAT sin errores.</p>
+                </div>
+                <div class="vs-card key-enter delay-3">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <h4>ATENCIÓN</h4>
+                    <p>Sin tickets globales. Soporte directo y personalizado con expertos que conocen tu empresa.</p>
+                </div>
+                <div class="vs-card key-enter delay-1" style="background: var(--navy); color: white;">
+                    <i class="fa-solid fa-shield-halved" style="color: var(--pink);"></i>
+                    <h4 style="color: white;">GARANTÍA ROI</h4>
+                    <p style="color: white; opacity: 0.9;">Metodología ágil: implementación en semanas, no años. Aseguramos tu inversión.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 40px; font-weight: 900; color: var(--navy);">"El 70% de los ERP fallan por falta de un Partner que entienda el negocio."</p>
+        </div>
+
+        <!-- 15. DEMO -->
+        <div class="slide" id="slide-15" style="background: var(--navy); color: white; justify-content: center; align-items: center; text-align: center;">
             <div class="blueprint-bg" style="opacity: 0.2;"></div>
             <i class="fa-solid fa-display critical-pulse" style="font-size: 100px; color: var(--cyan); margin-bottom: 40px;"></i>
             <h1 style="color: white; font-weight: 900;">VAMOS A VERLO <span class="cyan-text">EN ACCIÓN</span></h1>
             <p style="font-size: 28px; margin-top: 20px; font-weight: 300;">Demo en vivo: Del presupuesto al control total de obra.</p>
         </div>
 
-        <!-- 15. METODOLOGÍA -->
-        <div class="slide" id="slide-15" style="justify-content: center; display: flex; flex-direction: column;">
+        <!-- 16. METODOLOGÍA -->
+        <div class="slide" id="slide-16" style="justify-content: center; display: flex; flex-direction: column;">
             <h2 class="navy-text" style="text-align: center;">¿Cómo trabajamos <span class="cyan-text">en Chemon?</span></h2>
             <div class="method-container">
                 <div class="method-step key-enter delay-1"><div class="step-circle">1</div><i class="fa-solid fa-comments" style="font-size: 30px; color: var(--navy); margin-bottom: 15px;"></i><h4 style="font-weight: 900; margin-bottom: 10px;">Contacto</h4><p style="font-size: 13px;">Entendemos su operación.</p></div>
@@ -522,8 +560,8 @@
             <div class="logo-fixed">chemon<span>.</span></div>
         </div>
 
-        <!-- 16. ALIANZA -->
-        <div class="slide" id="slide-16" style="background: var(--navy); color: white; justify-content: center; text-align: center;">
+        <!-- 17. ALIANZA -->
+        <div class="slide" id="slide-17" style="background: var(--navy); color: white; justify-content: center; text-align: center;">
             <h3 class="cyan-text" style="letter-spacing: 5px;">COMPROMISO SOCIAL</h3>
             <h1 style="color: white; margin-bottom: 40px; font-weight: 900;">ALIANZA CMIC <span class="highlight">HIDALGO</span></h1>
             
@@ -551,8 +589,8 @@
             </div>
         </div>
 
-        <!-- 17. CIERRE / CONTACTO -->
-        <div class="slide" id="slide-17">
+        <!-- 18. CIERRE / CONTACTO -->
+        <div class="slide" id="slide-18">
             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
                 <h1 class="navy-text" style="font-weight: 900; font-size: 50px; margin-bottom: 40px;">CONSTRUYAMOS EL <span class="cyan-text">FUTURO</span></h1>
                 
